@@ -1,0 +1,70 @@
+{
+  "student": {
+    "student_id": "",
+    "birth_no": "",
+    "name": "",
+    "name_bangla": "",
+    "date_of_birth": "",
+    "religion": "",
+    "phone": "",
+    "email": "raisulislamsaied@gmail.com",
+    "gender": "male",
+    "nameOfClass": "45",
+    "sakha": "",
+    "date_of_admission": "",
+    "roll": 1,
+    "group": "",
+    "blood_group": "",
+    "academic_year": "",
+    "avatar": "",
+    "address": {
+      "distric": "",
+      "jela": "",
+      "thana": "",
+      "union": "",
+      "word_no": "",
+      "home": "",
+      "bangla": {
+        "distric": "",
+        "jela": "",
+        "thana": "",
+        "union": "",
+        "word_no": "",
+        "home": ""
+      }
+    },
+    "father": {
+      "name": "",
+      "name_bangla": "",
+      "phone": "",
+      "email": "",
+      "profession": "",
+      "nid_no": "",
+      "birth_no": "",
+      "date_of_birth": "",
+      "avatar": ""
+    },
+    "mother": {
+      "name": "",
+      "name_bangla": "",
+      "phone": "",
+      "email": "",
+      "profession": "",
+      "nid_no": "",
+      "birth_no": "",
+      "date_of_birth": "",
+      "avatar": ""
+    },
+    "gurdien": {
+      "name": "",
+      "name_bangla": "",
+      "phone": "",
+      "email": "",
+      "profession": "",
+      "nid_no": "",
+      "birth_no": "",
+      "date_of_birth": "",
+      "avatar": ""
+    }
+  }
+}
