@@ -11,7 +11,7 @@ const uploader = (allowed_file_type, max_file_size, error_message, local = true,
       "/../public/uploads",
       file_sub_path
     );
-    console.log(uploads_folder);
+    
     const storage = multer.diskStorage({
       destination: (req, file, cb) => {
         cb(null, uploads_folder);

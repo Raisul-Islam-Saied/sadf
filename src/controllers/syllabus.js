@@ -1,7 +1,8 @@
 const createError = require("http-errors");
+
 const { successMessage } = require("../helper/successMessage");
 const Syllabus = require("../models/syllabus");
-
+const path = require('path')
 const addSyllabus = async (req, res, next) => {
     try {
         const { nameOfClass, exam_year } = req.body;
@@ -15,7 +16,14 @@ const addSyllabus = async (req, res, next) => {
         }
         let syllabus_url = ''
         if (req.files && req.files[0]) {
-            syllabus_url = req.files[0].filename
+            const uploads_folder = path.join(
+                __dirname,
+                "/../",
+                "/../public/uploads/syllabus/",
+
+            );
+            syllabus_url = uploads_folder + req.files[0].filename
+            console.log(syllabus_url);
         }
 
 
