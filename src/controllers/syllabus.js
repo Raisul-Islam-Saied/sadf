@@ -13,19 +13,16 @@ const addSyllabus = async (req, res, next) => {
         if (!req.files[0]) {
             throw createError("file is required")
         }
-
-        // const file = req.files[0].path; // Assuming req.files[0] has a 'path' property containing the file path
-        // const response = await cloudinary.uploader.upload(file, {
-        //     folder: 'test',
-        //     resource_type: "pdf"
-        // });
-        // console.log(response);
+        let syllabus_url = ''
+        if (req.files && req.files[0]) {
+            syllabus_url = req.files[0].filename
+        }
 
 
         const syllabus = await Syllabus.create(
             {
                 nameOfClass, exam_year, syllabus:
-                    response.secure_url
+                    syllabus_url
             }
         )
 

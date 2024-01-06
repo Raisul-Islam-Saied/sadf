@@ -1,7 +1,7 @@
 const createError = require("http-errors");
 const multer = require("multer");
 const path = require('path')
-const uploader = (allowed_file_type, max_file_size, error_message, local = false, file_sub_path) => {
+const uploader = (allowed_file_type, max_file_size, error_message, local = true, file_sub_path) => {
   if (local) {
 
 

@@ -48,7 +48,7 @@ const addStudent = async (req, res, next) => {
 
         if (user) {
 
-            setNodeCache("student", { name: user.name, stuent_id: user.student_id, avatar: user.avatar })
+           
 
             successMessage(res, 201, 'successfully registered', user)
         } else {
