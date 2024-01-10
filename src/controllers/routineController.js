@@ -7,6 +7,7 @@ const isTeacherOrAdmin = require('../middlewares/isTeacherOrAdmin')
 
 const createRoutine = async (req, res, next) => {
     try {
+        console.log(req.body);
         const { subject, nameOfClass, priority, from, to, day, teacher, teacher_id, sakha, } = req.body
 
 
@@ -18,7 +19,7 @@ const createRoutine = async (req, res, next) => {
         if (!isTeacherExist) {
             throw createError(400, 'invalid teacher name')
         }
-        console.log(req.body);
+
 
 
         const routine = await Routine.create({ subject, nameOfClass, priority, from, to, day, teacher, teacher_id, sakha, })
