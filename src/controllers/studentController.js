@@ -1,12 +1,14 @@
 const createError = require("http-errors");
 const { successMessage } = require("../helper/successMessage");
 const Student = require("../models/student");
-const { setNodeCache } = require("../helper/nodeCache");
+
 const cloudinary = require('../config/cloudinary')
 
 
 const addStudent = async (req, res, next) => {
     try {
+        
+
         const { student_id, birth_no, name, name_bangla, father, mother, guardian, date_of_birth, religion, phone, email, address, gender, nameOfClass, sakha, date_of_admission, roll, group, blood_group, academic_year, address_bn } = req.body;
 
 
@@ -55,7 +57,7 @@ const addStudent = async (req, res, next) => {
             throw createError(400, 'failed to registerd')
         }
     } catch (error) {
-        console.log(error);
+        
         next({
             common: {
                 msg: error.message
