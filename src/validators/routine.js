@@ -30,8 +30,7 @@ const addRotineValidation = [
     body("to")
         .isTime().withMessage('not a valid time')
     ,
-    body('priority')
-        .notEmpty().isIn([1, 2, 3, 4, 5, 6, 7]).withMessage('not a valid priority'),
+
     body('sakha')
         .notEmpty().isIn(sakha).withMessage('not a valid sakha'),
     body("nameOfClass")
