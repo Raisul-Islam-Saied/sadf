@@ -48,13 +48,14 @@ const addStudent = async (req, res, next) => {
 
         if (user) {
 
-           
+
 
             successMessage(res, 201, 'successfully registered', user)
         } else {
             throw createError(400, 'failed to registerd')
         }
     } catch (error) {
+        console.log(error);
         next({
             common: {
                 msg: error.message
