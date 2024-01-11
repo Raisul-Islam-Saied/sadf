@@ -41,10 +41,10 @@ const rateLimiter = reateLimit({
 
 //appconst uploads_folder = path.join(
 console.log(path.join(__dirname, "../public"));
-app.use(express.static(path.join(__dirname, "../../public"), {
+app.use(express.static(path.join(__dirname, "../public"), {
   setHeaders: (res, path) => {
-
-    res.setHeader('Content-Disposition', 'attachment')
+   
+    res.setHeader('Content-Disposition' , 'attachment')
   }
 }))
 

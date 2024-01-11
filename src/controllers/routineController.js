@@ -7,7 +7,7 @@ const isTeacherOrAdmin = require('../middlewares/isTeacherOrAdmin')
 
 const createRoutine = async (req, res, next) => {
     try {
-        console.log(req.body);
+       
         const { subject, nameOfClass, priority, from, to, day, teacher, teacher_id, sakha, } = req.body
 
 

@@ -168,6 +168,11 @@ const studentSchema = new mongoose.Schema({
     published: {
         type: Boolean,
         default: false
+    },
+    avatar: {
+        required: false,
+        default: null,
+        type: String,
     }
 
 }, { timestamps: true });

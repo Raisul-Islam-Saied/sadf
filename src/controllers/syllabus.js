@@ -18,7 +18,7 @@ const addSyllabus = async (req, res, next) => {
         if (req.files && req.files[0]) {
             const uploads_folder = path.join(
                 __dirname,
-                "/../../",
+                "/../",
                 "/../public/uploads/syllabus/",
 
             );

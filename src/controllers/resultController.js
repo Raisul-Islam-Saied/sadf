@@ -32,9 +32,9 @@ const createResult = async (req, res, next) => {
         const student = await Student.findOne({ nameOfClass: nameOfClass, roll, academic_year: exam_year, sakha })
 
         if (!student) { throw createError(404, 'student not found') }
-        const { name, name_bangla, father_name_bangla, mother_name_bangla, date_of_birth, student_id, gender, group } = student
-
-
+        const { name, avatar, name_bangla, date_of_birth, student_id, gender, group } = student
+        const father_name_bangla = student.father.name_bangla;
+        const mother_name_bangla = student.mother.name_bangla
         const resultWithGradeAndPoint = subjects.map((subject) => {
             const { grade, point } = calculateGradeAndPoints(Number(subject.marks));
             return {
@@ -51,7 +51,7 @@ const createResult = async (req, res, next) => {
         const avarage_marks = (totalMarks / subjects.length).toFixed(2);
         const { grade: avarage_grade, point: avarage_point } = calculateGradeAndPoints(avarage_marks);
         const data = {
-
+            avatar,
             student_id,
             nameOfClass,
             exam_name,
@@ -181,7 +181,7 @@ const publishResult = async (req, res, next) => {
 
 
                 result.best_marks = passedResults.length > 0 ? passedResults[0].total_marks : failedResults[0].total_marks
-               
+
 
                 if (result.exam_name === "বার্ষিক পরীক্ষা") {
                     await Student.findOneAndUpdate(
