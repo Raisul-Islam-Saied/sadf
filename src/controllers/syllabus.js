@@ -1,4 +1,5 @@
 const createError = require("http-errors");
+const cloudinary = require('../config/cloudinary')
 
 const { successMessage } = require("../helper/successMessage");
 const Syllabus = require("../models/syllabus");
@@ -16,14 +17,14 @@ const addSyllabus = async (req, res, next) => {
         }
         let syllabus_url = ''
         if (req.files && req.files[0]) {
-            const uploads_folder = path.join(
-                __dirname,
-                "/../",
-                "/../public/uploads/syllabus/",
+            const file = req.files[0]
+            console.log(file);
 
-            );
-            syllabus_url = uploads_folder + req.files[0].filename
-            console.log(syllabus_url);
+            const response = await cloudinary.uploader.upload(file.path, {
+                folder: "syllabus"
+            });
+            syllabus_url = response.url + '?download=downloaded_file.pdf'
+
         }
 
 
