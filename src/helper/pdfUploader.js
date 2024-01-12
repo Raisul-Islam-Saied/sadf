@@ -5,8 +5,7 @@ const pdfUploader = (req, res, next) => {
         ["application/pdf"],
         1024 * 1024 * 1,
         "only pdf file allowed",
-        true,
-        "syllabus"
+
     );
     return upload.any()(req, res, (err) => {
 

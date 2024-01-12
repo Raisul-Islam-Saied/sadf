@@ -20,9 +20,7 @@ const addSyllabus = async (req, res, next) => {
             const file = req.files[0]
             console.log(file);
 
-            const response = await cloudinary.uploader.upload(file.path, {
-                folder: "syllabus"
-            });
+            const response = await cloudinary.uploader.upload(`data:${file.mimetype};base64,${file.buffer.toString('base64')}`,);
             syllabus_url = response.url + '?download=downloaded_file.pdf'
 
         }
@@ -42,6 +40,7 @@ const addSyllabus = async (req, res, next) => {
             throw createError(400, 'failed to registerd')
         }
     } catch (error) {
+        console.log(error);
         next({
             common: {
                 msg: error.message
