@@ -3,7 +3,7 @@ const uploader = require("./uploader");
 const pdfUploader = (req, res, next) => {
     const upload = uploader(
         ["application/pdf"],
-        1024 * 1024 * 1,
+        1024 * 1024 * 10,
         "only pdf file allowed",
 
     );

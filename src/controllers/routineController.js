@@ -56,7 +56,7 @@ const getRoutine = async (req, res, next) => {
         successMessage(res, 200, "", { routine: modifiedRoutine, info: routineInfo })
 
 
-
+console.log(routine);
 
     } catch (error) {
         console.log(error);
